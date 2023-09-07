@@ -6,7 +6,7 @@
 /*   By: fsarkoh <fsarkoh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 13:50:22 by joel              #+#    #+#             */
-/*   Updated: 2023/09/07 16:33:50 by fsarkoh          ###   ########.fr       */
+/*   Updated: 2023/09/07 16:40:43 by fsarkoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ static	std::string	replace(std::string content, std::string from, std::string to
     {
         content.erase(idx, from.length());
         content.insert(idx, to);
-        idx = content.find(from);
+		idx += to.length();
+        idx = content.find(from, idx);
     }
     return (content);
 }
